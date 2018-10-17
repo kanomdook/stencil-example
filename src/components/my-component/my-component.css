@@ -1,0 +1,13 @@
+.txt-red {
+    color: red;
+    margin-top: 4px;
+    font-size: 0.8rem;
+}
+
+.hide-txt {
+    display: none;
+}
+
+.show-txt {
+    display: block;
+}
