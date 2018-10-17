@@ -25,7 +25,7 @@ export class MyComponent {
   render() {
     return <div>
       <input type="text" placeholder="กรอกรหัสไปรษณีย์" maxlength="5" onInput={(event) => this.inputChanged(event)}></input>
-      <p id="txtRed" class="txt-red hide-txt">* กรุณากรอกรหัสไปรษณีย์</p>
+      <p id="txtRed" class="txt-red hide-txt">* ต้องเป็นตัวเลขเท่านั้น</p>
     </div>;
   }
 
