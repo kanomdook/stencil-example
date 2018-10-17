@@ -1,4 +1,5 @@
-import { Component, Prop } from '@stencil/core';
+import { Component, Prop, Element } from '@stencil/core';
+// import { Component, Prop } from '@stencil/core';
 
 @Component({
   tag: 'post-code-component',
@@ -6,14 +7,17 @@ import { Component, Prop } from '@stencil/core';
   shadow: false
 })
 export class MyComponent {
+  @Element() private element: HTMLElement;
   @Prop() required: boolean;
 
   inputChanged(event) {
     let x = event.target.value;
-    let txtRed = document.getElementById('txtRed');
+    // issue of find element when shadow: true ;https://github.com/ionic-team/stencil/issues/895
+    // this.element.shadowRoot.getElementById('txtRed');
+    let txtRed = this.element.ownerDocument.getElementById('txtRed');
     if (isNaN(x)) {
       txtRed.classList.remove('hide-txt');
-    }else{
+    } else {
       txtRed.classList.add('hide-txt');
     }
   }
